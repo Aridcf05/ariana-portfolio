@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css" with { type: "css" };
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Ariana Del Carpio | Software & UI/UX Engineer",
