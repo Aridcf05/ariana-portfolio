@@ -85,25 +85,28 @@ export const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-4 text-base sm:text-lg text-zinc-300 max-w-3xl font-normal leading-relaxed"
           >
-            Estudiante de Ingeniería de Sistemas (Último ciclo) con experiencia profesional en
-            desarrollo iOS, automatización y soluciones empresariales. Trabajo con Power Platform,
-            Python y técnicas de Machine Learning para construir soluciones prácticas con impacto real.
+            Estoy abierta a oportunidades donde pueda aplicar mis conocimientos, seguir creciendo y
+            participar en proyectos de tecnología con impacto. Combino formación académica y
+            experiencia profesional en iOS, automatización y soluciones de datos.
           </motion.p>
 
           {/* Currently compact */}
-          <motion.div
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.28 }}
-            className="mt-4 flex flex-wrap gap-3 items-center text-sm text-zinc-300"
-            aria-hidden={false}
-          >
-            <span className="px-3 py-2 rounded-full bg-white/5 border border-white/10">🎓 Ingeniería de Sistemas — UPC</span>
-            <span className="px-3 py-2 rounded-full bg-white/5 border border-white/10">💻 Trainee / iOS Developer — NTT DATA</span>
-            <span className="px-3 py-2 rounded-full bg-white/5 border border-white/10">🤖 AI / ML — Python & XGBoost</span>
-            <span className="px-3 py-2 rounded-full bg-white/5 border border-white/10">⚡ Power Platform — Power Apps & Power Automate</span>
-            <span className="px-3 py-2 rounded-full bg-white/5 border border-white/10">📍 Lima, Perú</span>
-          </motion.div>
+          <div className="mt-4">
+           <span className="text-xs font-mono uppercase tracking-[0.24em] text-cyan-400 font-semibold">ActualmentE</span>
+           <motion.div
+             initial={{ opacity: 0, y: 12 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.6, delay: 0.28 }}
+             className="mt-2 flex flex-wrap gap-3 items-center text-sm text-zinc-300"
+             aria-hidden={false}
+           >
+             <span className="px-3 py-2 rounded-full bg-white/5 border border-white/10">🎓 Ingeniería de Sistemas — UPC (Último ciclo)</span>
+             <span className="px-3 py-2 rounded-full bg-white/5 border border-white/10">💻 Trainee / iOS Developer — NTT DATA</span>
+             <span className="px-3 py-2 rounded-full bg-white/5 border border-white/10">⚡ Power Platform & Automation</span>
+             <span className="px-3 py-2 rounded-full bg-white/5 border border-white/10">🤖 AI / Machine Learning</span>
+             <span className="px-3 py-2 rounded-full bg-white/5 border border-white/10">📍 Lima, Perú</span>
+           </motion.div>
+          </div>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -146,6 +149,20 @@ export const Hero = () => {
             >
               GitHub
             </a>
+          </motion.div>
+
+          {/* Open to opportunities indicator */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.45 }}
+            className="mt-4 text-sm text-zinc-400 max-w-3xl"
+            aria-hidden={false}
+          >
+            <span className="inline-flex items-center gap-3 px-3 py-2 rounded-full bg-white/5 border border-white/10 text-sm text-zinc-300">
+                          <strong className="text-cyan-300">OPEN TO OPPORTUNITIES</strong>
+                          <span className="text-zinc-400">Abierta a explorar oportunidades en software development, mobile, automatización, datos e IA.</span>
+            </span>
           </motion.div>
         </div>
 

@@ -38,6 +38,10 @@ export const Philosophy = () => {
             Mi perfil combina análisis, ingeniería y producto: construyo soluciones que conectan procesos,
             datos y experiencia de usuario, con atención a la calidad, escalabilidad y claridad de la entrega.
           </p>
+          <p className="mt-2 text-zinc-400">
+            Estoy abierta a oportunidades donde pueda aplicar mis conocimientos, aprender en entornos técnicos
+            exigentes y contribuir en proyectos de impacto con un camino de crecimiento profesional.
+          </p>
         </div>
 
         <div className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 border-t border-white/10 text-xs font-mono text-zinc-400">

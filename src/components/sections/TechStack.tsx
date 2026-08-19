@@ -25,7 +25,8 @@ export const TechStack = () => {
     <section id="stack" className="py-20 max-w-6xl mx-auto px-4 relative z-10">
       <div className="text-center mb-14">
         <span className="text-xs font-mono uppercase tracking-[0.28em] text-cyan-400 font-semibold">Tech Stack</span>
-        <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight mt-2">Stack de tecnologías</h2>
+        <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight mt-2">Áreas de experiencia e interés</h2>
+        <p className="text-zinc-400 mt-2 max-w-2xl mx-auto">Listado representativo de tecnologías y áreas donde tengo experiencia práctica o interés profesional.</p>
       </div>
 
       <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
