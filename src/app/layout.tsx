@@ -13,9 +13,53 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Ariana Del Carpio Flores",
+  jobTitle: "Software Engineer",
+  description:
+    "Estudiante de Ingeniería de Sistemas enfocada en desarrollo iOS, Power Platform, automatización, datos e inteligencia artificial.",
+  alumniOf: "Universidad Peruana de Ciencias Aplicadas",
+  knowsAbout: [
+    "Software Development",
+    "iOS Development",
+    "Power Platform",
+    "Automation",
+    "Data Analysis",
+    "Machine Learning",
+    "Artificial Intelligence",
+  ],
+};
+
 export const metadata: Metadata = {
-  title: "Ariana Del Carpio Flores - Portafolio",
-  description: "Portafolio de Proyectos de Ariana del Carpio Flores",
+  metadataBase: new URL("https://tu-dominio.com"),
+  title: "Ariana Del Carpio Flores | Software Engineer",
+  description:
+    "Estudiante de Ingeniería de Sistemas enfocada en desarrollo iOS, Power Platform, automatización, datos e inteligencia artificial.",
+  alternates: {
+    canonical: "/",
+  },
+  icons: {
+    icon: "/Logo.svg",
+  },
+  openGraph: {
+    title: "Ariana Del Carpio Flores | Software Engineer",
+    description:
+      "Estudiante de Ingeniería de Sistemas enfocada en desarrollo iOS, Power Platform, automatización, datos e inteligencia artificial.",
+    siteName: "Ariana Del Carpio Flores",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ariana Del Carpio Flores | Software Engineer",
+    description:
+      "Estudiante de Ingeniería de Sistemas enfocada en desarrollo iOS, Power Platform, automatización, datos e inteligencia artificial.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -26,11 +70,16 @@ export default function RootLayout({
   return (
     <html
       lang="es"
+      suppressHydrationWarning
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body suppressHydrationWarning className="min-h-full flex flex-col">
         <LanguageProvider>
           {children}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+          />
         </LanguageProvider>
       </body>
     </html>
