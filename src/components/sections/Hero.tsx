@@ -38,7 +38,7 @@ export const Hero = () => {
   return (
     <section
       id="hero"
-      className="min-h-[80vh] flex flex-col justify-center items-center text-center px-4 pt-28 pb-12 relative z-10"
+      className="min-h-[65vh] md:min-h-[80vh] flex flex-col justify-center items-center text-center px-4 pt-20 md:pt-28 pb-12 relative z-10"
       aria-labelledby="hero-title"
     >
       <motion.div
