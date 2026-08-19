@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const experience = [
   {
     company: "NTT DATA PERÚ",
-    role: "Trainee — iOS Development",
+    role: "Prácticas preprofesionales · Trainee — iOS Development",
     dates: "Marzo 2026 – Octubre 2026",
     technologies: ["Swift", "SwiftUI", "MVVM", "REST APIs", "async/await", "URLSession", "Git", "Xcode"],
     description: "Desarrollo de módulos iOS utilizando Swift y SwiftUI bajo arquitectura MVVM, integrando APIs REST mediante programación asíncrona y procesamiento de datos JSON.",
@@ -17,7 +17,7 @@ const experience = [
   },
   {
     company: "AENZA",
-    role: "Practicante TI",
+    role: "Prácticas preprofesionales · Practicante TI",
     dates: "Mayo 2025 – Febrero 2026",
     technologies: ["Power Apps", "Power Automate", "Power BI", "SharePoint", "Microsoft Lists"],
     description: "",
