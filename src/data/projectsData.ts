@@ -17,6 +17,7 @@ export interface Project {
   id: string;
   title: string;
   category: { es: string; en: string };
+  projectType: { es: string; en: string };
   badge: string;
   shortDescription: { es: string; en: string };
   role: { es: string; en: string };
@@ -32,489 +33,451 @@ export const PROJECTS_DATA: Project[] = [
     id: "supplier-management-platform",
     title: "Supplier Management Platform",
     category: {
-      es: "Software Empresarial & Automatización",
-      en: "Enterprise Software & Automation"
+      es: "Microsoft & Automatización",
+      en: "Microsoft & Automation",
+    },
+    projectType: {
+      es: "Professional Project",
+      en: "Professional Project",
     },
     badge: "Microsoft Ecosystem",
     shortDescription: {
-      es: "Plataforma integral para el control del ciclo de vida de proveedores. Automatiza aprobaciones, incidencias y evaluación mediante flujos de Power Automate e integración nativa en SharePoint.",
-      en: "Comprehensive platform for supplier lifecycle management. Automates approvals, incidents, and evaluation via Power Automate flows and native SharePoint integration."
+      es: "Plataforma para gestionar el ciclo de vida de proveedores, con procesos de aprobación, seguimiento de incidencias y evaluación en un entorno empresarial conectado a Microsoft 365.",
+      en: "Platform for managing the supplier lifecycle, with approval workflows, incident tracking, and evaluation in a Microsoft 365 connected business environment.",
     },
     role: {
-      es: "Desarrollador Principal Power Platform",
-      en: "Lead Power Platform Developer"
+      es: "Power Platform Developer",
+      en: "Power Platform Developer",
     },
     duration: {
       es: "3 meses",
-      en: "3 months"
+      en: "3 months",
     },
-    stack: ["Power Apps", "Power Automate", "Power BI", "SharePoint", "Microsoft Lists"],
+    stack: ["Power Apps", "Power Automate", "Microsoft Lists", "SharePoint", "Power BI"],
     gradient: "from-purple-900/40 via-indigo-950/20 to-zinc-950",
     glowColor: "rgba(139, 92, 246, 0.15)",
     caseStudy: {
       heroTagline: {
-        es: "Orquestación empresarial e inteligencia operativa para la gestión de proveedores.",
-        en: "Enterprise orchestration and operational intelligence for supplier management."
+        es: "Solución empresarial para centralizar proveedores, requerimientos y seguimiento operativo.",
+        en: "Business solution to centralize suppliers, requirements, and operational tracking.",
       },
       problem: {
-        es: "Procesos manuales fragmentados en hojas de cálculo generaban cuellos de botella en la homologación de proveedores, falta de visibilidad en incidencias y tiempos de respuesta prolongados.",
-        en: "Fragmented manual processes in spreadsheets created bottlenecks in supplier onboarding, lack of visibility in incidents, and delayed response times."
+        es: "Las solicitudes y evaluaciones de proveedores se manejaban de forma dispersa, con procesos manuales y poca trazabilidad para seguimiento y control.",
+        en: "Supplier requests and evaluations were managed in a fragmented way, with manual processes and limited traceability for monitoring and control.",
       },
       objectives: {
         es: [
-          "Digitalizar el 100% de las solicitudes e incidencias de proveedores.",
-          "Reducir el tiempo del ciclo de aprobación de semanas a horas.",
-          "Consolidar dashboards ejecutivos en tiempo real con Power BI."
+          "Estandarizar el registro y seguimiento de proveedores.",
+          "Reducir la dependencia de flujos manuales y hojas de cálculo.",
+          "Mejorar la visibilidad operativa con reportes y seguimiento de incidencias.",
         ],
         en: [
-          "Digitize 100% of supplier requests and incident reports.",
-          "Reduce approval cycle times from weeks to hours.",
-          "Consolidate real-time executive dashboards using Power BI."
-        ]
+          "Standardize supplier registration and tracking.",
+          "Reduce dependency on manual flows and spreadsheets.",
+          "Improve operational visibility with reports and incident tracking.",
+        ],
       },
       architectureDescription: {
-        es: "Arquitectura desacoplada en Microsoft 365: interfaz reactiva en Power Apps conectada a listas optimizadas de SharePoint como repositorio de datos, orquestada por más de 12 flujos automatizados en Power Automate y renderizada en Power BI mediante DAX avanzado.",
-        en: "Decoupled architecture in Microsoft 365: reactive Power Apps interface connected to optimized SharePoint lists as data repository, orchestrated by 12+ Power Automate flows, and rendered in Power BI using advanced DAX."
+        es: "La solución se compone de una interfaz en Power Apps para el registro y validación de información, flujos automatizados en Power Automate para aprobaciones y notificaciones, y un modelo de datos en SharePoint / Microsoft Lists con reporting en Power BI.",
+        en: "The solution consists of a Power Apps interface for registration and validation, automated flows in Power Automate for approvals and notifications, and a SharePoint / Microsoft Lists data model with reporting in Power BI.",
       },
       processSteps: [
-        {
-          step: "01",
-          title: { es: "Descubrimiento & Modelado", en: "Discovery & Modeling" },
-          desc: { es: "Mapeo de procesos de negocio y diseño del esquema relacional de datos.", en: "Business process mapping and relational data schema design." }
-        },
-        {
-          step: "02",
-          title: { es: "Flujos de Automatización", en: "Automation Workflows" },
-          desc: { es: "Construcción de lógica condicional en Power Automate para aprobaciones jerárquicas.", en: "Conditional logic construction in Power Automate for hierarchical approvals." }
-        },
-        {
-          step: "03",
-          title: { es: "UX/UI Empresarial", en: "Enterprise UX/UI" },
-          desc: { es: "Diseño de interfaz accesible e intuitiva en Power Apps centrada en la eficiencia del operador.", en: "Accessible and intuitive Power Apps UI design focused on operator efficiency." }
-        },
-        {
-          step: "04",
-          title: { es: "Analytics Ejecutivo", en: "Executive Analytics" },
-          desc: { es: "Implementación de tableros directivos con actualización programada e indicadores SLA.", en: "Executive dashboards implementation with scheduled refresh and SLA metrics." }
-        }
+        { step: "01", title: { es: "Directorio de proveedores", en: "Supplier directory" }, desc: { es: "Estructuración del registro y clasificación de proveedores para mayor trazabilidad.", en: "Structure supplier registration and classification for better traceability." } },
+        { step: "02", title: { es: "Requerimientos y selección", en: "Requirements and selection" }, desc: { es: "Definición de flujo para solicitud, revisión y aprobación de requerimientos.", en: "Define the flow for requesting, reviewing, and approving requirements." } },
+        { step: "03", title: { es: "Incidencias y bloqueos", en: "Incidents and blockages" }, desc: { es: "Seguimiento de problemas, bloqueos y coordinación con responsables.", en: "Track issues, blockers, and coordination with stakeholders." } },
+        { step: "04", title: { es: "Evaluación y reporting", en: "Evaluation and reporting" }, desc: { es: "Monitoreo de indicadores y consolidación de información para decisiones operativas.", en: "Monitor indicators and consolidate information for operational decisions." } },
       ],
       metrics: [
-        { label: { es: "Reducción de Tiempo", en: "Time Reduction" }, value: "-75%" },
-        { label: { es: "Procesos Automatizados", en: "Automated Processes" }, value: "100%" },
-        { label: { es: "Visibilidad SLA", en: "SLA Visibility" }, value: "Real-time" }
+        { label: { es: "Automatización", en: "Automation" }, value: "Flujos de aprobación y notificación" },
+        { label: { es: "Centralización", en: "Centralization" }, value: "Información de proveedores en un solo lugar" },
+        { label: { es: "Trazabilidad", en: "Traceability" }, value: "Seguimiento de incidencias y requerimientos" },
       ],
       lessons: {
         es: [
-          "Optimizaciones profundas en SharePoint relacional previenen problemas de delegación de datos.",
-          "La experiencia de usuario interna (EX) acelera exponencialmente la adopción de nuevas herramientas empresariales."
+          "La claridad del flujo de negocio es clave para una buena experiencia de usuario en Power Apps.",
+          "La automatización gana valor cuando se combina con una estructura de datos clara y trazable.",
         ],
         en: [
-          "Deep optimizations in relational SharePoint prevent data delegation issues.",
-          "Internal User Experience (EX) exponentially accelerates the adoption of new enterprise tools."
-        ]
-      }
-    }
+          "Business flow clarity is key to a good Power Apps user experience.",
+          "Automation adds more value when paired with a clear and traceable data structure.",
+        ],
+      },
+    },
   },
   {
     id: "predictive-supplier-selection",
-    title: "Predictive Supplier Selection",
+    title: "Sistema Predictivo para la Selección de Proveedores en el sector diseño de interiores de Lima Metropolitana",
     category: {
-      es: "Machine Learning & Analítica",
-      en: "Machine Learning & Analytics"
+      es: "Machine Learning & Data Science",
+      en: "Machine Learning & Data Science",
     },
-    badge: "AI Powered",
+    projectType: {
+      es: "Thesis / Academic Project",
+      en: "Thesis / Academic Project",
+    },
+    badge: "Thesis",
     shortDescription: {
-      es: "Sistema predictivo que analiza variables históricas de desempeño y riesgo para recomendar la selección óptima de proveedores en compras estratégicas.",
-      en: "Predictive system analyzing historical performance and risk variables to recommend optimal supplier selection for strategic procurement."
+      es: "Tesis orientada a la selección predictiva de proveedores para el sector de diseño de interiores en Lima Metropolitana, aplicando Machine Learning para apoyar decisiones basadas en múltiples variables.",
+      en: "Thesis focused on predictive supplier selection for the interior design sector in Metropolitan Lima, using Machine Learning to support decisions based on multiple variables.",
     },
     role: {
-      es: "Ingeniera de Datos & ML",
-      en: "Data & ML Engineer"
+      es: "ML / Data Science Developer",
+      en: "ML / Data Science Developer",
     },
     duration: {
       es: "2 meses",
-      en: "2 months"
+      en: "2 months",
     },
-    stack: ["Python", "Scikit-Learn", "XGBoost", "Pandas", "NumPy"],
+    stack: ["Python", "Pandas", "NumPy", "Scikit-learn", "XGBoost"],
     gradient: "from-violet-900/40 via-purple-950/20 to-zinc-950",
     glowColor: "rgba(168, 85, 247, 0.15)",
     caseStudy: {
       heroTagline: {
-        es: "Toma de decisiones de abastecimiento impulsada por modelos de Machine Learning.",
-        en: "Procurement decision-making driven by Machine Learning models."
+        es: "Sistema predictivo para apoyar la selección de proveedores en el sector de diseño de interiores de Lima Metropolitana.",
+        en: "Predictive system to support supplier selection in the interior design sector of Metropolitan Lima.",
       },
       problem: {
-        es: "Decisiones de compra basadas en intuición o costo inmediato, ignorando factores complejos de riesgo de entrega, fluctuaciones de calidad y desempeño histórico.",
-        en: "Purchasing decisions based on intuition or immediate cost, ignoring complex factors of delivery risk, quality fluctuations, and historical performance."
+        es: "La elección de proveedores en el sector de diseño de interiores suele depender de criterios limitados o subjetivos, sin considerar variables relevantes como desempeño, riesgo, cumplimiento y comportamiento del mercado local.",
+        en: "Supplier selection in the interior design sector often relies on limited or subjective criteria, without considering relevant variables such as performance, risk, compliance, and local market behavior.",
       },
       objectives: {
         es: [
-          "Desarrollar un modelo de clasificación y scoring automatizado de proveedores.",
-          "Identificar patrones implícitos de incumplimiento previo a la adjudicación.",
-          "Ofrecer explicabilidad del modelo a los tomadores de decisiones."
+          "Analizar relaciones entre variables de desempeño y riesgo.",
+          "Construir un pipeline de Machine Learning para apoyar la decisión de selección.",
+          "Explorar la capacidad predictiva del modelo para clasificación y evaluación.",
         ],
         en: [
-          "Develop an automated classification and scoring supplier model.",
-          "Identify implicit non-compliance patterns prior to contract award.",
-          "Provide model explainability for decision-makers."
-        ]
+          "Analyze relationships between performance and risk variables.",
+          "Build a Machine Learning pipeline to support the selection decision.",
+          "Explore the predictive capability of the model for classification and evaluation.",
+        ],
       },
       architectureDescription: {
-        es: "Pipeline completo de ciencia de datos: limpieza y feature engineering con Pandas/NumPy, entrenamiento y afinado de hiperparámetros de ensamble (XGBoost y Random Forest), evaluado mediante validación cruzada estructurada.",
-        en: "Complete data science pipeline: cleaning and feature engineering with Pandas/NumPy, training and hyperparameter tuning of ensemble models (XGBoost & Random Forest), evaluated via structured cross-validation."
+        es: "El proyecto se estructura con un pipeline de datos que incluye ingestión, limpieza, preprocessing, feature engineering, participación train/test, entrenamiento de modelos y evaluación de rendimiento.",
+        en: "The project is structured with a data pipeline that includes ingestion, cleaning, preprocessing, feature engineering, train/test split, model training, and performance evaluation.",
       },
       processSteps: [
-        {
-          step: "01",
-          title: { es: "Ingesta de Datos", en: "Data Ingestion" },
-          desc: { es: "Limpieza y estructuración de histórico transaccional de proveedores.", en: "Cleaning and structuring historical supplier transactional data." }
-        },
-        {
-          step: "02",
-          title: { es: "Feature Engineering", en: "Feature Engineering" },
-          desc: { es: "Creación de variables sintéticas de riesgo y cumplimiento normativo.", en: "Synthetic feature creation for risk and regulatory compliance." }
-        },
-        {
-          step: "03",
-          title: { es: "Entrenamiento & Tuning", en: "Training & Tuning" },
-          desc: { es: "Optimización de modelos predictivos reduciendo el sesgo predictivo.", en: "Optimization of predictive models while mitigating prediction bias." }
-        },
-        {
-          step: "04",
-          title: { es: "Inferencia & Reporte", en: "Inference & Reporting" },
-          desc: { es: "Generación de scores explicables para comités de evaluación.", en: "Generation of explainable scores for evaluation committees." }
-        }
+        { step: "Data", title: { es: "Data", en: "Data" }, desc: { es: "Revisión y estructuración del conjunto de datos de proveedores.", en: "Review and structure the supplier dataset." } },
+        { step: "Preprocessing", title: { es: "Preprocessing", en: "Preprocessing" }, desc: { es: "Limpieza, normalización y preparación de variables para modelado.", en: "Cleaning, normalization, and preparation of variables for modeling." } },
+        { step: "Feature Engineering", title: { es: "Feature Engineering", en: "Feature Engineering" }, desc: { es: "Creación de variables relevantes para riesgo y desempeño.", en: "Creation of relevant variables for risk and performance." } },
+        { step: "Train/Test Split", title: { es: "Train/Test Split", en: "Train/Test Split" }, desc: { es: "Separación del conjunto de datos para entrenamiento y validación.", en: "Split the data for training and validation." } },
+        { step: "Model Training", title: { es: "Model Training", en: "Model Training" }, desc: { es: "Entrenamiento de modelos predictivos con algoritmos de clasificación.", en: "Training predictive models using classification algorithms." } },
+        { step: "Evaluation", title: { es: "Evaluation", en: "Evaluation" }, desc: { es: "Análisis del rendimiento del modelo con métricas relevantes.", en: "Analyze model performance using relevant metrics." } },
+        { step: "Prediction", title: { es: "Prediction", en: "Prediction" }, desc: { es: "Generación de resultados para apoyar la toma de decisiones de selección.", en: "Generate results to support supplier selection decisions." } },
       ],
       metrics: [
-        { label: { es: "Precisión del Modelo", en: "Model Accuracy" }, value: "92.4%" },
-        { label: { es: "Mitigación de Riesgo", en: "Risk Mitigation" }, value: "High" },
-        { label: { es: "Features Analizadas", en: "Analyzed Features" }, value: "25+" }
+        { label: { es: "Accuracy", en: "Accuracy" }, value: "TODO: agregar métrica real" },
+        { label: { es: "Precision", en: "Precision" }, value: "TODO: agregar métrica real" },
+        { label: { es: "Recall", en: "Recall" }, value: "TODO: agregar métrica real" },
+        { label: { es: "F1-score", en: "F1-score" }, value: "TODO: agregar métrica real" },
+        { label: { es: "ROC-AUC", en: "ROC-AUC" }, value: "TODO: agregar métrica real" },
       ],
       lessons: {
         es: [
-          "La explicabilidad de la IA mediante métricas de importancia de atributos es crucial para ganar la confianza de la dirección.",
-          "El balanceo de clases previo al entrenamiento evita la sobreestimación de proveedores tradicionales."
+          "La selección de proveedores requiere considerar múltiples dimensiones, no solo costo o disponibilidad.",
+          "La calidad del preprocessing y la ingeniería de variables influye directamente en la capacidad predictiva del modelo.",
         ],
         en: [
-          "AI explainability through feature importance metrics is essential to gain leadership trust.",
-          "Pre-training class balancing prevents overestimating traditional suppliers."
-        ]
-      }
-    }
+          "Supplier selection requires considering multiple dimensions, not just cost or availability.",
+          "The quality of preprocessing and feature engineering directly impacts model predictive capability.",
+        ],
+      },
+    },
   },
   {
     id: "executive-dashboard",
     title: "Executive Dashboard",
     category: {
-      es: "Inteligencia de Negocios",
-      en: "Business Intelligence"
+      es: "Business Intelligence",
+      en: "Business Intelligence",
+    },
+    projectType: {
+      es: "Professional Project",
+      en: "Professional Project",
     },
     badge: "Analytics",
     shortDescription: {
-      es: "Tablero ejecutivo de alta dirección centrado en el monitoreo en tiempo real de KPIs corporativos, conversión financiera y análisis de salud operativa.",
-      en: "Executive C-suite dashboard focused on real-time KPI monitoring, financial conversion, and operational health analysis."
+      es: "Dashboard ejecutivo orientado a consolidar información clave de negocio en una sola vista, con indicadores de rendimiento y análisis operativo.",
+      en: "Executive dashboard focused on consolidating key business information in one view, with performance indicators and operational analysis.",
     },
     role: {
-      es: "Especialista en BI",
-      en: "BI Specialist"
+      es: "BI Developer",
+      en: "BI Developer",
     },
     duration: {
       es: "1 mes",
-      en: "1 month"
+      en: "1 month",
     },
     stack: ["Power BI", "Power Query", "DAX", "SQL"],
     gradient: "from-fuchsia-900/30 via-zinc-950 to-zinc-950",
     glowColor: "rgba(217, 70, 239, 0.15)",
     caseStudy: {
       heroTagline: {
-        es: "Inteligencia de negocios de alta precisión para la toma de decisiones estratégicas.",
-        en: "High-precision business intelligence for strategic decision-making."
+        es: "Visualización ejecutiva de indicadores clave para toma de decisiones más ágil y enfocada.",
+        en: "Executive visualization of key indicators for faster, more focused decision-making.",
       },
       problem: {
-        es: "Información dispersa en múltiples silos organizacionales imposibilitaba la lectura unificada de la salud financiera y operativa del negocio.",
-        en: "Scattered data across multiple organizational silos prevented a unified view of financial and operational business health."
+        es: "La información de negocio estaba dispersa y no estaba disponible en una sola vista para la toma de decisiones de dirección.",
+        en: "Business information was dispersed and not available in a single view for management decision-making.",
       },
       objectives: {
         es: [
-          "Unificar más de 5 fuentes de datos heterogéneas en un único modelo de datos estelar.",
-          "Diseñar visualizaciones de alta densidad de información sin saturar al usuario ejecutivo.",
-          "Implementar seguridad a nivel de filas (RLS) según el perfil directivo."
+          "Consolidar fuentes de información heterogéneas.",
+          "Diseñar indicadores y visualizaciones claras para decisión ejecutiva.",
+          "Facilitar el acceso y análisis de información clave.",
         ],
         en: [
-          "Unify 5+ heterogeneous data sources into a single star schema data model.",
-          "Design high-information-density visualizations without overwhelming executives.",
-          "Implement Row-Level Security (RLS) according to management profiles."
-        ]
+          "Consolidate heterogeneous information sources.",
+          "Design clear indicators and visualizations for executive decisions.",
+          "Facilitate access to and analysis of key information.",
+        ],
       },
       architectureDescription: {
-        es: "Modelo de datos en estrella optimizado en Power BI. ETL avanzado con Power Query para limpieza profunda, cálculo de medidas dinámicas complejas con DAX y diseño UI Dark-Mode con maquetación de alto contraste.",
-        en: "Optimized star schema model in Power BI. Advanced ETL with Power Query for deep cleaning, complex dynamic DAX measures, and Dark-Mode UI design with high-contrast layout."
+        es: "La solución se desarrolla con Power BI y modelado de datos para combinar fuentes diversas, cálculos con DAX y visualizaciones orientadas a la jerarquía y lectura rápida.",
+        en: "The solution is developed with Power BI and data modeling to combine diverse sources, calculations with DAX, and visualizations oriented to hierarchy and fast reading.",
       },
       processSteps: [
-        {
-          step: "01",
-          title: { es: "Modelado Star Schema", en: "Star Schema Modeling" },
-          desc: { es: "Estructuración de tablas de hechos y dimensiones para máximo rendimiento.", en: "Fact and dimension table structuring for maximum performance." }
-        },
-        {
-          step: "02",
-          title: { es: "Lógica DAX Avanzada", en: "Advanced DAX Logic" },
-          desc: { es: "Creación de cálculos Time-Intelligence y acumulados dinámicos.", en: "Time-Intelligence calculations and dynamic running totals creation." }
-        },
-        {
-          step: "03",
-          title: { es: "Diseño UX de Dashboard", en: "Dashboard UX Design" },
-          desc: { es: "Maquetación con principios de jerarquía visual y Ley de Fitts.", en: "Layout applying visual hierarchy principles and Fitts's Law." }
-        }
+        { step: "01", title: { es: "Modelado de datos", en: "Data modeling" }, desc: { es: "Consolidación de tablas y relaciones para permitir análisis confiable.", en: "Consolidate tables and relationships for reliable analysis." } },
+        { step: "02", title: { es: "Lógica DAX", en: "DAX logic" }, desc: { es: "Cálculo de indicadores y métricas para toma de decisiones.", en: "Calculate indicators and metrics for decision-making." } },
+        { step: "03", title: { es: "Diseño analítico", en: "Analytical design" }, desc: { es: "Diseño visual con foco en lectura rápida, claridad y jerarquía.", en: "Visual design with a focus on fast reading, clarity, and hierarchy." } },
       ],
       metrics: [
-        { label: { es: "Fuentes Integradas", en: "Integrated Sources" }, value: "5+" },
-        { label: { es: "Latencia de Refresco", en: "Refresh Latency" }, value: "< 2s" },
-        { label: { es: "Seguridad RLS", en: "RLS Security" }, value: "100%" }
+        { label: { es: "Fuentes integradas", en: "Integrated sources" }, value: "TODO: agregar número real" },
+        { label: { es: "Indicadores clave", en: "Key indicators" }, value: "Tableros ejecutivos" },
+        { label: { es: "Acceso por perfil", en: "Profile access" }, value: "Visibilidad segmentada" },
       ],
       lessons: {
         es: [
-          "Reducir el uso de tarjetas secundarias mejora significativamente la velocidad de renderizado en tableros con millones de filas."
+          "Los dashboards ejecutivos requieren un diseño claro y una lógica de indicadores bien definida.",
+          "La calidad de la fuente de datos define la utilidad del reporte.",
         ],
         en: [
-          "Reducing secondary visual cards significantly improves render speed in multi-million row reports."
-        ]
-      }
-    }
+          "Executive dashboards require clean design and well-defined KPI logic.",
+          "The quality of the data source defines the usefulness of the report.",
+        ],
+      },
+    },
   },
   {
     id: "ai-copilot",
     title: "AI Enterprise Copilot",
     category: {
-      es: "IA Generativa & Software Empresarial",
-      en: "Generative AI & Enterprise"
+      es: "IA Generativa & Enterprise",
+      en: "Generative AI & Enterprise",
+    },
+    projectType: {
+      es: "Professional Project",
+      en: "Professional Project",
     },
     badge: "Copilot Studio",
     shortDescription: {
-      es: "Asistente conversacional con Inteligencia Artificial Generativa entrenado sobre la base de conocimiento corporativa para soporte y consultas inmediatas.",
-      en: "Generative AI conversational assistant trained on corporate knowledge base for instant support and queries."
+      es: "Asistente conversacional con IA generativa para responder consultas de negocio y apoyar el acceso a información corporativa con un enfoque práctico y seguro.",
+      en: "Conversational assistant with generative AI to answer business queries and support access to corporate information with a practical and secure approach.",
     },
     role: {
-      es: "Arquitecta de Soluciones IA",
-      en: "AI Solution Architect"
+      es: "AI / Copilot Studio Developer",
+      en: "AI / Copilot Studio Developer",
     },
     duration: {
       es: "2 meses",
-      en: "2 months"
+      en: "2 months",
     },
-    stack: ["Copilot Studio", "Power Platform", "Azure OpenAI", "SharePoint"],
+    stack: ["Copilot Studio", "Power Platform", "SharePoint", "AI"],
     gradient: "from-purple-950 via-violet-950/40 to-zinc-950",
     glowColor: "rgba(139, 92, 246, 0.2)",
     caseStudy: {
       heroTagline: {
-        es: "Capacidades conversacionales autónomas conectadas al conocimiento organizacional.",
-        en: "Autonomous conversational capabilities connected to organizational knowledge."
+        es: "Flujos conversacionales apoyados en conocimiento organizacional para respuestas más rápidas y consistentes.",
+        en: "Conversational flows supported by organizational knowledge for faster and more consistent responses.",
       },
       problem: {
-        es: "Alta carga de consultas repetitivas hacia el equipo de soporte e infraestructuras de documentación difíciles de navegar manualmente.",
-        en: "High volume of repetitive queries to support teams and complex documentation infrastructure hard to navigate manually."
+        es: "El equipo operativo recibía un volumen alto de consultas repetitivas y requería un canal más eficiente para acceder a información documentada.",
+        en: "The operations team received a high volume of repetitive queries and required a more efficient channel to access documented information.",
       },
       objectives: {
         es: [
-          "Desplegar un bot conversacional con capacidades RAG (Retrieval-Augmented Generation).",
-          "Garantizar privacidad de datos corporativos dentro de la nube de Microsoft.",
-          "Responder con precisión técnica en menos de 3 segundos."
+          "Diseñar un asistente conversacional con base en documentación corporativa.",
+          "Estructurar flujos para mejorar la precisión de las respuestas.",
+          "Aplicar principios de seguridad y gobernanza de la información.",
         ],
         en: [
-          "Deploy a conversational bot with RAG (Retrieval-Augmented Generation) capabilities.",
-          "Ensure corporate data privacy within Microsoft Cloud boundaries.",
-          "Respond with technical accuracy in under 3 seconds."
-        ]
+          "Design a conversational assistant based on corporate documentation.",
+          "Structure flows to improve response accuracy.",
+          "Apply information security and governance principles.",
+        ],
       },
       architectureDescription: {
-        es: "Construido con Microsoft Copilot Studio, conectado mediante conectores de datos de Power Platform a repositorios restringidos de SharePoint y fuentes indexadas con Azure OpenAI Service.",
-        en: "Built with Microsoft Copilot Studio, connected via Power Platform data connectors to restricted SharePoint repositories and indexed sources using Azure OpenAI Service."
+        es: "El proyecto se construye sobre Copilot Studio y conectores de Power Platform para integrar conocimientos corporativos y ofrecer respuestas alineadas al contexto operativo.",
+        en: "The project is built on Copilot Studio and Power Platform connectors to integrate corporate knowledge and provide responses aligned to operational context.",
       },
       processSteps: [
-        {
-          step: "01",
-          title: { es: "Estructuración KB", en: "KB Structuring" },
-          desc: { es: "Indexación y etiquetado semántico de documentos organizacionales.", en: "Indexing and semantic tagging of organizational documentation." }
-        },
-        {
-          step: "02",
-          title: { es: "Orquestación de Diálogos", en: "Dialog Orchestration" },
-          desc: { es: "Diseño de flujos conversacionales con respuestas contextuales dinámicas.", en: "Conversational flow design with dynamic contextual responses." }
-        },
-        {
-          step: "03",
-          title: { es: "Filtros de Seguridad", en: "Safety Guardrails" },
-          desc: { es: "Aplicación de políticas de moderación y prevención de alucinaciones.", en: "Moderation policy application and hallucination prevention." }
-        }
+        { step: "01", title: { es: "Estructuración del conocimiento", en: "Knowledge structuring" }, desc: { es: "Organización y preparación de la base documental para ser consultada.", en: "Organize and prepare the document base to be queried." } },
+        { step: "02", title: { es: "Flujo conversacional", en: "Conversational flow" }, desc: { es: "Diseño del diálogo y respuestas posibles en función del contexto.", en: "Design the dialogue and possible responses based on context." } },
+        { step: "03", title: { es: "Seguridad y gobernanza", en: "Security and governance" }, desc: { es: "Aplicación de reglas y validaciones para respuestas consistentes y seguras.", en: "Apply rules and validation to ensure consistent and secure responses." } },
       ],
       metrics: [
-        { label: { es: "Resolución Autónoma", en: "Autonomous Resolution" }, value: "82%" },
-        { label: { es: "Tiempo de Resp.", en: "Response Time" }, value: "< 1.5s" },
-        { label: { es: "Satis. Usuario", en: "User Satisfaction" }, value: "4.9/5" }
+        { label: { es: "Base de conocimiento", en: "Knowledge base" }, value: "Documentación corporativa" },
+        { label: { es: "Respuestas", en: "Responses" }, value: "Contextualizadas" },
+        { label: { es: "Seguridad", en: "Security" }, value: "Políticas y gobernanza" },
       ],
       lessons: {
         es: [
-          "La calidad de la base de conocimiento previa determina el 90% del éxito de las respuestas generativas."
+          "La calidad y organización de la documentación determinan gran parte del valor del asistente.",
+          "Las respuestas útiles necesitan contexto, estructura y reglas de seguridad claras.",
         ],
         en: [
-          "Knowledge base clean-up and quality determine 90% of generative AI response success."
-        ]
-      }
-    }
+          "The quality and organization of documentation determine much of the assistant's value.",
+          "Useful responses require context, structure, and clear security rules.",
+        ],
+      },
+    },
   },
   {
     id: "ios-applications",
-    title: "iOS Native Mobile Platform",
+    title: "iOS Mobile Application",
     category: {
-      es: "Arquitectura Mobile",
-      en: "Mobile Architecture"
+      es: "Mobile & iOS",
+      en: "Mobile & iOS",
+    },
+    projectType: {
+      es: "Professional Project",
+      en: "Professional Project",
     },
     badge: "SwiftUI & Apple Design",
     shortDescription: {
-      es: "Suite de aplicaciones nativas para iOS con foco en Clean Architecture, patrón MVVM, reactividad con Combine y microinteracciones de alto rendimiento.",
-      en: "Native iOS app suite focusing on Clean Architecture, MVVM pattern, reactive Combine state management, and high-performance micro-interactions."
+      es: "Aplicación móvil nativa desarrollada con SwiftUI, enfocado en arquitectura limpia, manejo de estado reactivo y una experiencia coherente con las guías de diseño de Apple.",
+      en: "Native mobile application built with SwiftUI, focused on clean architecture, reactive state management, and a consistent experience aligned with Apple's design guidelines.",
     },
     role: {
-      es: "Desarrolladora iOS",
-      en: "iOS Developer"
+      es: "iOS Developer",
+      en: "iOS Developer",
     },
     duration: {
       es: "3 meses",
-      en: "3 months"
+      en: "3 months",
     },
-    stack: ["SwiftUI", "Swift", "Combine", "Xcode", "Git"],
+    stack: ["Swift", "SwiftUI", "MVVM", "Combine", "Xcode", "Git"],
     gradient: "from-blue-900/30 via-purple-950/30 to-zinc-950",
     glowColor: "rgba(59, 130, 246, 0.2)",
     caseStudy: {
       heroTagline: {
-        es: "Experiencias móviles ultrasólidas con la máxima fidelidad de diseño nativo de Apple.",
-        en: "Ultra-solid mobile experiences with Apple native design fidelity."
+        es: "Experiencia nativa con arquitectura modular y flujo de trabajo claro para iOS.",
+        en: "Native experience with modular architecture and a clear workflow for iOS.",
       },
       problem: {
-        es: "Necesidad de aplicaciones móviles de respuesta inmediata, con capacidades offline-first y apego riguroso a las Human Interface Guidelines (HIG).",
-        en: "Need for instant-response mobile applications with offline-first capabilities and strict adherence to Human Interface Guidelines (HIG)."
+        es: "Se requería una app móvil con estructura mantenible, flujo reactivo de datos y experiencia alineada con Human Interface Guidelines.",
+        en: "An app was required with maintainable structure, reactive data flow, and an experience aligned with Human Interface Guidelines.",
       },
       objectives: {
         es: [
-          "Implementar Clean Architecture con desacoplamiento modular completo.",
-          "Asegurar transiciones suaves a 120Hz (ProMotion) sin caídas de cuadros.",
-          "Manejo reactivo de estados asíncronos mediante Combine."
+          "Diseñar una arquitectura clara y mantenible.",
+          "Separar lógica de vista, estado y servicios.",
+          "Entregar una interfaz nativa y consistente con buenas prácticas de iOS.",
         ],
         en: [
-          "Implement Clean Architecture with complete modular decoupling.",
-          "Ensure fluid 120Hz (ProMotion) transitions without frame drops.",
-          "Reactive asynchronous state management using Combine."
-        ]
+          "Design a clear and maintainable architecture.",
+          "Separate view logic, state, and services.",
+          "Deliver a native interface consistent with iOS best practices.",
+        ],
       },
       architectureDescription: {
-        es: "Capa de vista puramente declarativa con SwiftUI, desacoplada mediante ViewModels inyectados, repositorios de datos mock/remote y manejo de servicios de red genéricos en Swift nativo.",
-        en: "Purely declarative view layer in SwiftUI, decoupled via injected ViewModels, mock/remote repositories, and generic network service handling in native Swift."
+        es: "La arquitectura está organizada con View → ViewModel → Model / Services, donde la vista se encarga de la presentación, el ViewModel gestiona el estado y los modelos/servicios encapsulan la lógica de dominio y acceso a datos.",
+        en: "The architecture is organized as View → ViewModel → Model / Services, where the view handles presentation, the ViewModel manages state, and models/services encapsulate domain logic and data access.",
       },
       processSteps: [
-        {
-          step: "01",
-          title: { es: "Arquitectura MVVM-C", en: "MVVM-C Architecture" },
-          desc: { es: "Estructuración de capas de dominio, datos y presentación.", en: "Domain, data, and presentation layer structuring." }
-        },
-        {
-          step: "02",
-          title: { es: "UI & Motion Fluido", en: "UI & Fluid Motion" },
-          desc: { es: "Implementación de animaciones nativas y gestos intuitivos.", en: "Native animations and intuitive gestures implementation." }
-        },
-        {
-          step: "03",
-          title: { es: "Pruebas & Profiling", en: "Testing & Profiling" },
-          desc: { es: "Optimización de memoria e hilos de ejecución mediante Instruments.", en: "Memory and execution thread optimization via Instruments." }
-        }
+        { step: "01", title: { es: "View", en: "View" }, desc: { es: "Diseño de la UI con SwiftUI y componentes reutilizables.", en: "UI design with SwiftUI and reusable components." } },
+        { step: "02", title: { es: "ViewModel", en: "ViewModel" }, desc: { es: "Gestión del estado y lógica de presentación enlazada con eventos UI.", en: "State management and presentation logic connected to UI events." } },
+        { step: "03", title: { es: "Model / Services", en: "Model / Services" }, desc: { es: "Encapsulación de servicios y datos para mantener la aplicación modular.", en: "Encapsulation of services and data to keep the app modular." } },
       ],
       metrics: [
-        { label: { es: "Tasa de Refresco", en: "Frame Rate" }, value: "120 FPS" },
-        { label: { es: "Arquitectura", en: "Architecture" }, value: "Clean MVVM" },
-        { label: { es: "Guía UI", en: "UI Guideline" }, value: "Apple HIG" }
+        { label: { es: "Arquitectura", en: "Architecture" }, value: "MVVM + SwiftUI" },
+        { label: { es: "Estado", en: "State" }, value: "Reactivo con Combine" },
+        { label: { es: "Ecosistema", en: "Ecosystem" }, value: "Xcode + Git" },
       ],
       lessons: {
         es: [
-          "El uso de Value Types (structs) en SwiftUI garantiza un estado inmutable predictivo y altamente eficiente."
+          "La separación clara entre presentación y lógica facilita el mantenimiento a medida que la aplicación crece.",
+          "SwiftUI permite construir interfaces nativas con una base muy legible cuando la arquitectura está bien definida.",
         ],
         en: [
-          "Using Value Types (structs) in SwiftUI guarantees predictable and highly efficient immutable state."
-        ]
-      }
-    }
+          "Clear separation between presentation and logic makes maintenance easier as the app grows.",
+          "SwiftUI allows building native interfaces with a highly readable base when the architecture is well defined.",
+        ],
+      },
+    },
   },
   {
     id: "personal-portfolio",
     title: "Personal Portfolio Experience",
     category: {
-      es: "Ingeniería Frontend & UX",
-      en: "Frontend Engineering & UX"
+      es: "Frontend & UX",
+      en: "Frontend & UX",
     },
-    badge: "Awwwards Style",
+    projectType: {
+      es: "Personal Project",
+      en: "Personal Project",
+    },
+    badge: "Next.js",
     shortDescription: {
-      es: "Portafolio interactivo de grado profesional inspirado en Framer, Apple y Linear. Desarrollado con Next.js, Tailwind CSS y Framer Motion.",
-      en: "Professional interactive portfolio inspired by Framer, Apple, and Linear. Developed with Next.js, Tailwind CSS, and Framer Motion."
+      es: "Portafolio personal desarrollado para mostrar mi perfil, proyectos y habilidades con una experiencia visual moderna y clara para reclutamiento técnico.",
+      en: "Personal portfolio developed to present my profile, projects, and skills with a modern and clear visual experience for technical recruitment.",
     },
     role: {
-      es: "Ingeniera UI/UX",
-      en: "UI/UX Engineer"
+      es: "Frontend Developer",
+      en: "Frontend Developer",
     },
     duration: {
       es: "En evolución",
-      en: "Ongoing"
+      en: "Ongoing",
     },
     stack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion"],
     gradient: "from-zinc-800/40 via-purple-950/20 to-zinc-950",
     glowColor: "rgba(255, 255, 255, 0.1)",
     caseStudy: {
       heroTagline: {
-        es: "El lienzo interactivo de mi marca personal y visión técnica.",
-        en: "The interactive canvas of my personal brand and technical vision."
+        es: "Marca personal y narrativa técnica con enfoque profesional y visualmente moderno.",
+        en: "Personal brand and technical narrative with a professional and visually modern approach.",
       },
       problem: {
-        es: "Las plantillas convencionales no transmiten el rigor, la atención al detalle ni el enfoque de producto necesario para destacar en firmas tecnológicas globales.",
-        en: "Conventional templates fail to convey the rigor, attention to detail, and product focus required to stand out in global tech firms."
+        es: "Necesidad de mostrar un perfil técnico de forma clara, moderna y orientada a reclutamiento, sin perder la identidad visual ni la esencia del trabajo realizado.",
+        en: "Need to present a technical profile clearly, modernly, and with a recruitment-oriented perspective without losing visual identity or the core of the work performed.",
       },
       objectives: {
         es: [
-          "Diseñar un sistema de diseño propio basado en tonos oscuros y luz reactiva.",
-          "Asegurar tiempos de carga instantáneos (Performance 100/100 en Lighthouse).",
-          "Ofrecer animaciones fluidas sin impactar el renderizado en móviles."
+          "Presentar el perfil con claridad y profesionalismo.",
+          "Resaltar proyectos y decisiones técnicas pertinentes.",
+          "Mantener una estética premium sin perder legibilidad ni velocidad.",
         ],
         en: [
-          "Design a custom design system based on dark tones and reactive light.",
-          "Ensure instant load times (100/100 Lighthouse Performance).",
-          "Deliver fluid animations without impacting mobile rendering performance."
-        ]
+          "Present the profile with clarity and professionalism.",
+          "Highlight relevant projects and technical decisions.",
+          "Maintain a premium aesthetic without losing readability or speed.",
+        ],
       },
       architectureDescription: {
-        es: "Construido sobre Next.js con React Server Components para optimización de bundle, renderizado acelerado por GPU con Framer Motion y maquetación con Tailwind CSS.",
-        en: "Built on Next.js with React Server Components for bundle optimization, GPU-accelerated rendering with Framer Motion, and Tailwind CSS layout."
+        es: "Se construye con Next.js y animaciones ligeras para mantener una experiencia fluida, modular y centrada en la narrativa de cada proyecto.",
+        en: "It is built with Next.js and lightweight animations to maintain a smooth, modular, and project-focused experience.",
       },
       processSteps: [
-        {
-          step: "01",
-          title: { es: "Sistema de Diseño", en: "Design System" },
-          desc: { es: "Definición de tokens de color, tipografía y sombras neomórficas.", en: "Color token, typography, and neomorphic shadow definition." }
-        },
-        {
-          step: "02",
-          title: { es: "Micro-interacciones", en: "Micro-interactions" },
-          desc: { es: "Efectos de tarjetas flotantes, spotlight y modales cinematográficos.", en: "Floating card effects, spotlight, and cinematic modals." }
-        }
+        { step: "01", title: { es: "Narrativa", en: "Narrative" }, desc: { es: "Definición de la propuesta de valor profesional en el portfolio.", en: "Define the professional value proposition in the portfolio." } },
+        { step: "02", title: { es: "Diseño visual", en: "Visual design" }, desc: { es: "Mantenimiento de la identidad actual con mejoras profesionales y más claridad estructural.", en: "Maintain the current identity while improving professional polish and structural clarity." } },
+        { step: "03", title: { es: "Contenido técnico", en: "Technical content" }, desc: { es: "Presentación de proyectos y capacidades con un enfoque técnico y verificado.", en: "Present projects and skills with a technical and verified focus." } },
       ],
       metrics: [
-        { label: { es: "Rendimiento Lighthouse", en: "Lighthouse Score" }, value: "100/100" },
-        { label: { es: "Caída de Frames", en: "Frame Drop" }, value: "0%" },
-        { label: { es: "Fidelidad Visual", en: "Visual Fidelity" }, value: "Awwwards" }
+        { label: { es: "Diseño", en: "Design" }, value: "Premium y minimalista" },
+        { label: { es: "Narrativa", en: "Narrative" }, value: "Foco en reclutamiento" },
+        { label: { es: "Technical depth", en: "Technical depth" }, value: "Proyectos con contexto" },
       ],
       lessons: {
         es: [
-          "La contención en la cantidad de animaciones simultáneas marca la diferencia entre un sitio recargado y una experiencia elegante."
+          "Un portfolio técnico debe priorizar claridad y evidencia sobre adornos visuales.",
+          "La narrativa correcta comunica mejor la madurez del perfil que una cantidad excesiva de contenido.",
         ],
         en: [
-          "Restraint in simultaneous animations marks the line between an overcrowded site and an elegant experience."
-        ]
-      }
-    }
-  }
+          "A technical portfolio should prioritize clarity and evidence over visual embellishment.",
+          "The right narrative communicates profile maturity better than excessive content.",
+        ],
+      },
+    },
+  },
 ];

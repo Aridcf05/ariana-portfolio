@@ -31,7 +31,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-2xl overflow-y-auto"
+          className="fixed inset-0 z-50 flex items-start justify-center bg-black/80 backdrop-blur-2xl overflow-y-auto px-3 py-6"
         >
           {/* Botón de Cierre Flotante */}
           <button
@@ -46,11 +46,11 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
 
           {/* Contenido del Case Study */}
           <motion.div
-            initial={{ opacity: 0, y: 40, scale: 0.98 }}
+            initial={{ opacity: 0, y: 20, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 30, scale: 0.98 }}
-            transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full max-w-5xl my-12 mx-4 bg-[#0a0a0c] border border-white/10 rounded-3xl p-6 md:p-12 shadow-2xl text-zinc-100 relative overflow-hidden"
+            exit={{ opacity: 0, y: 20, scale: 0.98 }}
+            transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            className="w-full max-w-4xl mx-auto my-2 bg-[#0a0a0c] border border-white/10 rounded-3xl p-5 md:p-8 shadow-2xl text-zinc-100 relative overflow-hidden"
           >
             {/* Ambient Background Gradient */}
             <div
@@ -68,8 +68,8 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({ project, onClose
                   {project.badge}
                 </span>
               </div>
-              <h1 className="text-3xl md:text-5xl font-bold tracking-tight text-white">{project.title}</h1>
-              <p className="text-lg md:text-xl text-zinc-400 font-light max-w-3xl leading-relaxed">
+              <h1 className="text-2xl md:text-4xl font-bold tracking-tight text-white">{project.title}</h1>
+              <p className="text-base md:text-lg text-zinc-400 font-light max-w-3xl leading-relaxed">
                 {project.caseStudy.heroTagline[language]}
               </p>
 

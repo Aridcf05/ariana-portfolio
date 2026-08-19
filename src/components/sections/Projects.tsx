@@ -26,7 +26,7 @@ export const Projects = () => {
           transition={{ duration: 0.5 }}
           className="text-xs font-mono uppercase tracking-[0.3em] text-violet-400 font-semibold"
         >
-          {language === "es" ? "Proyectos Destacados" : "Selected Works"}
+          {language === "es" ? "Proyectos destacados" : "Selected work"}
         </motion.span>
 
         <motion.h2
@@ -34,9 +34,9 @@ export const Projects = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="text-5xl md:text-8xl font-black text-white tracking-tighter uppercase"
+          className="text-4xl md:text-7xl font-black text-white tracking-tighter uppercase"
         >
-          {language === "es" ? "PROYECTOS" : "PROJECTS"}
+          {language === "es" ? "Proyectos" : "Projects"}
         </motion.h2>
 
         <motion.p

@@ -11,16 +11,26 @@ interface ProjectCardProps {
   index: number;
 }
 
+const insightMap: Record<string, [string, string]> = {
+  "supplier-management-platform": ["Automatización de procesos", "Centralización de información"],
+  "predictive-supplier-selection": ["Análisis predictivo", "Selección de proveedores"],
+  "executive-dashboard": ["Indicadores clave", "Visualización ejecutiva"],
+  "ai-copilot": ["Asistente conversacional", "Base de conocimiento"],
+  "ios-applications": ["Arquitectura MVVM", "Interfaz nativa"],
+  "personal-portfolio": ["Diseño UX", "Frontend moderno"],
+};
+
 export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenCaseStudy, index }) => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
   const { language } = useLanguage();
+  const [primaryInsight, secondaryInsight] = insightMap[project.id] ?? ["Solución funcional", "Diseño técnico"];
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     setMousePosition({
       x: e.clientX - rect.left,
-      y: e.clientY - rect.top
+      y: e.clientY - rect.top,
     });
   };
 
@@ -35,22 +45,18 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenCaseStu
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Dynamic Mouse Glow Light */}
       <div
         className="pointer-events-none absolute -inset-px transition-opacity duration-300 opacity-0 group-hover:opacity-100 rounded-3xl"
         style={{
-          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, ${project.glowColor}, transparent 40%)`
+          background: `radial-gradient(600px circle at ${mousePosition.x}px ${mousePosition.y}px, ${project.glowColor}, transparent 40%)`,
         }}
       />
 
-      {/* Grid Interior */}
       <div className="relative z-10 flex flex-col lg:flex-row gap-8 lg:gap-12 items-center justify-between">
-        
-        {/* Lado Izquierdo: Información Narrativa */}
         <div className="space-y-6 flex-1 w-full">
           <div className="flex flex-wrap items-center gap-3">
-            <span className="text-xs font-mono tracking-widest text-violet-400 uppercase">
-              {project.category[language]}
+            <span className="text-[10px] font-mono tracking-[0.2em] text-violet-400 uppercase">
+              {project.projectType?.[language] ?? project.category[language]}
             </span>
             <span className="text-[10px] font-mono px-3 py-1 rounded-full bg-white/[0.04] border border-white/10 text-zinc-300">
               {project.badge}
@@ -65,24 +71,18 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenCaseStu
             {project.shortDescription[language]}
           </p>
 
-          {/* Roles & Tiempos */}
           <div className="flex items-center gap-6 text-xs font-mono text-zinc-500 border-t border-b border-white/5 py-3">
             <div>
-              <span className="text-zinc-600 block text-[10px] uppercase">
-                {language === "es" ? "Rol" : "Role"}
-              </span>
+              <span className="text-zinc-600 block text-[10px] uppercase">{language === "es" ? "Rol" : "Role"}</span>
               <span className="text-zinc-300">{project.role[language]}</span>
             </div>
             <div className="w-px h-6 bg-white/10" />
             <div>
-              <span className="text-zinc-600 block text-[10px] uppercase">
-                {language === "es" ? "Duración" : "Duration"}
-              </span>
+              <span className="text-zinc-600 block text-[10px] uppercase">{language === "es" ? "Duración" : "Duration"}</span>
               <span className="text-zinc-300">{project.duration[language]}</span>
             </div>
           </div>
 
-          {/* Badges del Tech Stack */}
           <div className="flex flex-wrap gap-2">
             {project.stack.map((tech, i) => (
               <span
@@ -94,38 +94,32 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenCaseStu
             ))}
           </div>
 
-          {/* Action CTA Button */}
           <div className="pt-2">
             <button
               onClick={() => onOpenCaseStudy(project)}
               className="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-white hover:text-violet-300 transition-colors group/btn"
+              aria-label={language === "es" ? `Abrir caso de estudio de ${project.title}` : `Open case study for ${project.title}`}
             >
-              <span>{language === "es" ? "Ver Caso de Estudio" : "View Case Study"}</span>
-              <span className="text-violet-400 transition-transform duration-300 group-hover/btn:translate-x-1">
-                →
-              </span>
+              <span>{language === "es" ? "Ver caso de estudio" : "View case study"}</span>
+              <span className="text-violet-400 transition-transform duration-300 group-hover/btn:translate-x-1">→</span>
             </button>
           </div>
         </div>
 
-        {/* Lado Derecho: Visual Display del Sistema / Mockup Canvas */}
         <div className="w-full lg:w-[480px] h-64 md:h-80 rounded-2xl bg-gradient-to-br from-zinc-900 via-zinc-950 to-black border border-white/10 relative overflow-hidden flex flex-col justify-between p-6 shadow-inner group-hover:scale-[1.01] transition-transform duration-500">
-          
-          {/* Header del Mockup */}
           <div className="flex items-center justify-between border-b border-white/10 pb-3">
             <div className="flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-zinc-700" />
-              <span className="w-2.5 h-2.5 rounded-full bg-zinc-700" />
-              <span className="w-2.5 h-2.5 rounded-full bg-zinc-700" />
+              <span className="w-2.5 h-2.5 rounded-full bg-zinc-700" aria-hidden="true" />
+              <span className="w-2.5 h-2.5 rounded-full bg-zinc-700" aria-hidden="true" />
+              <span className="w-2.5 h-2.5 rounded-full bg-zinc-700" aria-hidden="true" />
             </div>
             <span className="text-[10px] font-mono text-zinc-500 uppercase">{project.badge}</span>
           </div>
 
-          {/* Contenido Simulado del Dashboard en la Tarjeta */}
           <div className="my-auto space-y-3">
             <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 space-y-2 backdrop-blur-sm">
               <div className="flex justify-between text-xs font-mono text-zinc-400">
-                <span>{language === "es" ? "Estado del Sistema" : "System Status"}</span>
+                <span>{language === "es" ? "Detalle clave" : "Key detail"}</span>
                 <span className="text-emerald-400 font-semibold">{language === "es" ? "Activo" : "Active"}</span>
               </div>
               <div className="w-full h-1.5 rounded-full bg-zinc-800 overflow-hidden">
@@ -140,24 +134,22 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenCaseStu
 
             <div className="grid grid-cols-2 gap-2 text-center">
               <div className="p-2.5 rounded-lg bg-zinc-900/60 border border-white/5">
-                <p className="text-xs font-mono text-zinc-500">{language === "es" ? "Eficiencia" : "Efficiency"}</p>
-                <p className="text-sm font-bold text-white mt-0.5">+85%</p>
+                <p className="text-xs font-mono text-zinc-500">{language === "es" ? "Resultado" : "Outcome"}</p>
+                <p className="text-sm font-bold text-white mt-0.5">{primaryInsight}</p>
               </div>
               <div className="p-2.5 rounded-lg bg-zinc-900/60 border border-white/5">
-                <p className="text-xs font-mono text-zinc-500">{language === "es" ? "Arquitectura" : "Architecture"}</p>
-                <p className="text-sm font-bold text-violet-400 mt-0.5">Enterprise</p>
+                <p className="text-xs font-mono text-zinc-500">{language === "es" ? "Enfoque" : "Focus"}</p>
+                <p className="text-sm font-bold text-violet-400 mt-0.5">{secondaryInsight}</p>
               </div>
             </div>
           </div>
 
-          {/* Overlay de interacción al pasar el cursor */}
           <div className="text-center pt-2 border-t border-white/5">
             <span className="text-[10px] font-mono text-zinc-500 uppercase tracking-wider group-hover:text-zinc-300 transition-colors">
-              {language === "es" ? "Clic para ver métricas detalladas" : "Click to view detailed metrics"}
+              {language === "es" ? "Abrir caso de estudio" : "Open case study"}
             </span>
           </div>
         </div>
-
       </div>
     </motion.div>
   );
