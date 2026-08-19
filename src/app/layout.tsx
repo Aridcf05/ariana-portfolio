@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 const personSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Ariana Del Carpio Flores",
+  name: "Ariana Ileen del Carpio Flores",
   jobTitle: "Software Engineer",
   description:
     "Estudiante de Ingeniería de Sistemas enfocada en desarrollo iOS, Power Platform, automatización, datos e inteligencia artificial.",
@@ -34,9 +34,9 @@ const personSchema = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://tu-dominio.com"),
-  title: "Ariana Del Carpio Flores | Software Engineer",
+  title: "Ariana Ileen del Carpio Flores | Software Engineer",
   description:
-    "Estudiante de Ingeniería de Sistemas enfocada en desarrollo iOS, Power Platform, automatización, datos e inteligencia artificial.",
+    "Ariana Ileen del Carpio Flores — estudiante de Ingeniería de Sistemas en la UPC, enfocada en desarrollo iOS, Power Platform, automatización, datos e inteligencia artificial.",
   alternates: {
     canonical: "/",
   },
@@ -44,17 +44,17 @@ export const metadata: Metadata = {
     icon: "/Logo.svg",
   },
   openGraph: {
-    title: "Ariana Del Carpio Flores | Software Engineer",
+    title: "Ariana Ileen del Carpio Flores | Software Engineer",
     description:
-      "Estudiante de Ingeniería de Sistemas enfocada en desarrollo iOS, Power Platform, automatización, datos e inteligencia artificial.",
-    siteName: "Ariana Del Carpio Flores",
+      "Ariana Ileen del Carpio Flores — estudiante de Ingeniería de Sistemas en la UPC, enfocada en desarrollo iOS, Power Platform, automatización, datos e inteligencia artificial.",
+    siteName: "Ariana Ileen del Carpio Flores",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ariana Del Carpio Flores | Software Engineer",
+    title: "Ariana Ileen del Carpio Flores | Software Engineer",
     description:
-      "Estudiante de Ingeniería de Sistemas enfocada en desarrollo iOS, Power Platform, automatización, datos e inteligencia artificial.",
+      "Ariana Ileen del Carpio Flores — estudiante de Ingeniería de Sistemas en la UPC, enfocada en desarrollo iOS, Power Platform, automatización, datos e inteligencia artificial.",
   },
   robots: {
     index: true,

@@ -19,7 +19,7 @@ export const Philosophy = () => {
         </span>
 
         <h2 className="text-2xl md:text-4xl font-bold text-white tracking-tight mt-3 mb-6">
-          Soy una estudiante de Ingeniería de Sistemas con experiencia práctica y enfoque en soluciones reales.
+          Soy Ariana Ileen del Carpio Flores, estudiante de Ingeniería de Sistemas con experiencia práctica y enfoque en soluciones reales.
         </h2>
 
         <div className="space-y-4 text-zinc-300 leading-relaxed font-light text-sm md:text-base">

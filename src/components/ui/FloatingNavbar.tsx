@@ -26,12 +26,12 @@ export const FloatingNavbar = () => {
         <a href="#hero" className="font-bold tracking-tight text-sm text-white flex items-center gap-2 min-w-0 shrink-0" aria-label="Ir al inicio">
           <Image
             src="/Logo Pag.png"
-            alt="Logo Ariana Del Carpio"
+            alt="Logo Ariana Ileen del Carpio Flores"
             width={24}
             height={24}
             className="rounded-full object-cover"
           />
-          <span className="hidden sm:inline">Ariana Del Carpio</span>
+          <span className="hidden sm:inline">Ariana Ileen del Carpio Flores</span>
         </a>
 
         <div className="hidden md:flex items-center gap-5 text-xs text-zinc-400 font-medium">

@@ -1,0 +1,9 @@
+INSTRUCCIONES: Coloca tu CV en formato PDF en este mismo directorio con el nombre exacto "cv.pdf" para que el botón "Descargar CV" en el portafolio funcione correctamente.
+
+Ruta esperada (Windows): public\cv.pdf
+Ruta esperada (URL): /cv.pdf
+
+Notas:
+- No se incluye ningún CV real en el repositorio por privacidad.
+- Si deseas que el CV se abra en una nueva pestaña en lugar de descargar, quita el atributo "download" en los enlaces correspondientes en src/components/sections/Hero.tsx y src/components/sections/Footer.tsx.
+- Después de colocar cv.pdf, vuelve a desplegar o reiniciar el servidor de producción si corresponde.
