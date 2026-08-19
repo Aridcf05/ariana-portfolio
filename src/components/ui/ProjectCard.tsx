@@ -117,21 +117,6 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project, onOpenCaseStu
           </div>
 
           <div className="my-auto space-y-3">
-            <div className="p-4 rounded-xl bg-white/[0.02] border border-white/5 space-y-2 backdrop-blur-sm">
-              <div className="flex justify-between text-xs font-mono text-zinc-400">
-                <span>{language === "es" ? "Detalle clave" : "Key detail"}</span>
-                <span className="text-emerald-400 font-semibold">{language === "es" ? "Activo" : "Active"}</span>
-              </div>
-              <div className="w-full h-1.5 rounded-full bg-zinc-800 overflow-hidden">
-                <motion.div
-                  className="h-full bg-gradient-to-r from-violet-500 to-indigo-500"
-                  initial={{ width: "0%" }}
-                  animate={{ width: isHovered ? "100%" : "65%" }}
-                  transition={{ duration: 0.8 }}
-                />
-              </div>
-            </div>
-
             <div className="grid grid-cols-2 gap-2 text-center">
               <div className="p-2.5 rounded-lg bg-zinc-900/60 border border-white/5">
                 <p className="text-xs font-mono text-zinc-500">{language === "es" ? "Resultado" : "Outcome"}</p>

@@ -121,8 +121,8 @@ export const PROJECTS_DATA: Project[] = [
       en: "Thesis focused on predictive supplier selection for the interior design sector in Metropolitan Lima, using Machine Learning to support decisions based on multiple variables.",
     },
     role: {
-      es: "ML / Data Science Developer",
-      en: "ML / Data Science Developer",
+      es: "Machine Learning Developer",
+      en: "Machine Learning Developer",
     },
     duration: {
       es: "2 meses",

@@ -5,6 +5,7 @@ import { Philosophy } from "@/components/sections/Philosophy";
 import { Experience } from "@/components/sections/Experience";
 import { Projects } from "@/components/sections/Projects";
 import { TechStack } from "@/components/sections/TechStack";
+import { Education } from "@/components/sections/Education";
 import { Footer } from "@/components/sections/Footer";
 import { WhatsAppButton } from "@/components/ui/WhatsAppButton";
 
@@ -16,6 +17,7 @@ export default function Home() {
         <Hero />
         <Philosophy />
         <Experience />
+        <Education />
         <Projects />
         <TechStack />
         <Footer />
