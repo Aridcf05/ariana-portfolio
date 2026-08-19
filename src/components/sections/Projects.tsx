@@ -15,7 +15,7 @@ export const Projects = () => {
     <section id="projects" className="py-32 px-4 md:px-8 max-w-7xl mx-auto relative z-10 bg-[#09090b]">
       
       {/* Luz de fondo sutil (Ambient Glow) */}
-      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-violet-900/10 rounded-full blur-[160px] pointer-events-none" />
+      <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[320px] sm:w-[480px] md:w-[600px] h-[160px] sm:h-[220px] md:h-[300px] bg-violet-900/10 rounded-full blur-[120px] sm:blur-[140px] md:blur-[160px] pointer-events-none" />
 
       {/* Header de la Sección */}
       <div className="mb-24 space-y-6 text-center md:text-left relative z-10">

@@ -62,7 +62,7 @@ export const Hero = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-[-0.02em] leading-[1.02] text-white"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-[-0.02em] leading-[1.02] text-white break-words"
           >
             Ariana Ileen del Carpio Flores
           </motion.h1>
@@ -172,7 +172,7 @@ export const Hero = () => {
             <source
               type="image/webp"
               srcSet="/images/ariana-profile-160.webp 160w, /images/ariana-profile-320.webp 320w, /images/ariana-profile-640.webp 640w, /images/ariana-profile-800.webp 800w"
-              sizes="(max-width: 480px) 96px, (max-width: 768px) 128px, (max-width: 1024px) 160px, 160px"
+                            sizes="(max-width: 480px) 112px, (max-width: 768px) 128px, (max-width: 1024px) 160px, 160px"
             />
             <Image
               src="/images/ariana-profile-800.webp"
