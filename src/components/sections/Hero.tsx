@@ -2,65 +2,118 @@
 import React from "react";
 import { motion } from "framer-motion";
 
+const socialLinks = {
+  github: "https://github.com/Aridcf05",
+  linkedin: "https://www.linkedin.com/in/arianadelcarpioflores/",
+  cv: "/cv.pdf",
+};
+
 export const Hero = () => {
   return (
-    <section id="hero" className="min-h-screen flex flex-col justify-center items-center text-center px-4 pt-24 pb-12 relative z-10">
-      {/* Badge Disponibilidad */}
+    <section
+      id="hero"
+      className="min-h-[80vh] flex flex-col justify-center items-center text-center px-4 pt-28 pb-12 relative z-10"
+      aria-labelledby="hero-title"
+    >
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-cyan-500/30 text-xs font-semibold text-cyan-300 mb-8 shadow-lg shadow-cyan-500/10"
+        className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-cyan-500/30 text-[11px] sm:text-xs font-semibold text-cyan-300 mb-7 shadow-lg shadow-cyan-500/10"
       >
-        <span className="relative flex h-2 w-2">
+        <span className="relative flex h-2 w-2" aria-hidden="true">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
           <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
         </span>
-        Disponible para proyectos internacionales & soluciones AI
+        Junior Software Engineer / Software Engineering Intern
       </motion.div>
 
-      {/* Title */}
       <motion.h1
+        id="hero-title"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.1 }}
-        className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight max-w-5xl leading-[1.15] text-white"
+        className="text-4xl sm:text-5xl md:text-7xl font-extrabold tracking-[-0.04em] max-w-5xl leading-[1.08] text-white"
       >
-        Construyendo el futuro digital con{" "}
-        <span className="bg-gradient-to-r from-white via-zinc-200 to-zinc-400 bg-clip-text text-transparent">
-          elegancia, código e inteligencia.
-        </span>
+        <span className="bg-gradient-to-r from-cyan-300 via-sky-200 to-white bg-clip-text text-transparent">
+          Software Engineer
+        </span>{" "}
+        <span className="text-zinc-200">| iOS · Power Platform · AI</span>
       </motion.h1>
 
-      {/* Subtitle */}
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
-        className="mt-6 text-base sm:text-xl text-zinc-400 max-w-2xl font-normal leading-relaxed"
+        className="mt-6 text-base sm:text-xl text-zinc-300 max-w-3xl font-normal leading-relaxed"
       >
-        Soy <span className="text-white font-semibold">Ariana Del Carpio</span>. 
-        Especializada en <span className="text-cyan-400 font-medium">Desarrollo Web, Mobile, AI y Power Platform</span>.
+        Soy estudiante de Ingeniería de Sistemas en el último ciclo y ya tengo experiencia
+        práctica en desarrollo de software, automatización y soluciones empresariales. Trabajo
+        con iOS, Power Platform, Python, Machine Learning y la construcción de soluciones
+        funcionales con impacto real.
       </motion.p>
 
-      {/* CTAs */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.3 }}
-        className="mt-10 flex flex-wrap gap-4 justify-center items-center"
+        className="mt-6 flex flex-wrap justify-center gap-2 text-[11px] sm:text-xs font-medium text-zinc-300"
+      >
+        {[
+          "iOS",
+          "Power Platform",
+          "Automation",
+          "Data & AI",
+          "Python",
+          "Business Solutions",
+        ].map((item) => (
+          <span
+            key={item}
+            className="px-3 py-1.5 rounded-full border border-white/10 bg-white/5 text-zinc-200"
+          >
+            {item}
+          </span>
+        ))}
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.35 }}
+        className="mt-10 flex flex-wrap gap-3 sm:gap-4 justify-center items-center"
       >
         <a
           href="#projects"
-          className="px-8 py-4 rounded-full bg-cyan-500 text-black font-bold text-sm hover:bg-cyan-400 transition-all shadow-lg shadow-cyan-500/25 transform hover:scale-105 active:scale-95"
+          className="px-6 py-3 sm:px-8 sm:py-4 rounded-full bg-cyan-500 text-black font-bold text-sm hover:bg-cyan-400 shadow-lg shadow-cyan-500/25"
+          aria-label="Ver proyectos"
         >
-          Explorar Casos de Estudio
+          Ver proyectos
         </a>
         <a
-          href="#contact"
-          className="px-8 py-4 rounded-full glass-panel text-zinc-200 font-bold text-sm hover:text-white hover:border-white/20 transition-all transform hover:scale-105 active:scale-95"
+          href={socialLinks.cv}
+          className="px-6 py-3 sm:px-8 sm:py-4 rounded-full glass-panel text-zinc-100 font-semibold text-sm hover:text-white hover:border-cyan-400/50"
+          aria-label="Descargar CV"
+          download
         >
-          Iniciar Conversación
+          Descargar CV
+        </a>
+        <a
+          href={socialLinks.linkedin}
+          target="_blank"
+          rel="noreferrer"
+          className="px-6 py-3 sm:px-8 sm:py-4 rounded-full border border-white/10 bg-white/5 text-zinc-100 font-semibold text-sm hover:border-cyan-400/50 hover:text-cyan-200"
+          aria-label="Ir a LinkedIn"
+        >
+          LinkedIn
+        </a>
+        <a
+          href={socialLinks.github}
+          target="_blank"
+          rel="noreferrer"
+          className="px-6 py-3 sm:px-8 sm:py-4 rounded-full border border-white/10 bg-white/5 text-zinc-100 font-semibold text-sm hover:border-cyan-400/50 hover:text-cyan-200"
+          aria-label="Ir a GitHub"
+        >
+          GitHub
         </a>
       </motion.div>
     </section>

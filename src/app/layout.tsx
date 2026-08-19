@@ -1,9 +1,65 @@
 import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { LanguageProvider } from "@/context/LanguageContext";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const personSchema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Ariana Del Carpio Flores",
+  jobTitle: "Software Engineer",
+  description:
+    "Estudiante de Ingeniería de Sistemas enfocada en desarrollo iOS, Power Platform, automatización, datos e inteligencia artificial.",
+  alumniOf: "Universidad Peruana de Ciencias Aplicadas",
+  knowsAbout: [
+    "Software Development",
+    "iOS Development",
+    "Power Platform",
+    "Automation",
+    "Data Analysis",
+    "Machine Learning",
+    "Artificial Intelligence",
+  ],
+};
 
 export const metadata: Metadata = {
-  title: "Ariana Del Carpio | Software & UI/UX Engineer",
-  description: "Portafolio profesional de soluciones digitales, AI y arquitectura de software.",
+  metadataBase: new URL("https://tu-dominio.com"),
+  title: "Ariana Del Carpio Flores | Software Engineer",
+  description:
+    "Estudiante de Ingeniería de Sistemas enfocada en desarrollo iOS, Power Platform, automatización, datos e inteligencia artificial.",
+  alternates: {
+    canonical: "/",
+  },
+  icons: {
+    icon: "/Logo.svg",
+  },
+  openGraph: {
+    title: "Ariana Del Carpio Flores | Software Engineer",
+    description:
+      "Estudiante de Ingeniería de Sistemas enfocada en desarrollo iOS, Power Platform, automatización, datos e inteligencia artificial.",
+    siteName: "Ariana Del Carpio Flores",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ariana Del Carpio Flores | Software Engineer",
+    description:
+      "Estudiante de Ingeniería de Sistemas enfocada en desarrollo iOS, Power Platform, automatización, datos e inteligencia artificial.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -12,9 +68,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" className="dark scroll-smooth" suppressHydrationWarning>
-      <body className="antialiased bg-[#09090b] text-zinc-100" suppressHydrationWarning>
-        {children}
+    <html
+      lang="es"
+      suppressHydrationWarning
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+    >
+      <body suppressHydrationWarning className="min-h-full flex flex-col">
+        <LanguageProvider>
+          {children}
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+          />
+        </LanguageProvider>
       </body>
     </html>
   );

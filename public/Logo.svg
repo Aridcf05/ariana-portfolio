@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="aGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F6E8FF"/>
+      <stop offset="35%" stop-color="#D3A8FF"/>
+      <stop offset="70%" stop-color="#A855F7"/>
+      <stop offset="100%" stop-color="#6D28D9"/>
+    </linearGradient>
+
+    <linearGradient id="ribbonGrad" x1="0%" y1="50%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#C084FC"/>
+      <stop offset="45%" stop-color="#D8B4FE"/>
+      <stop offset="100%" stop-color="#A855F7"/>
+    </linearGradient>
+
+    <filter id="softGlow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- transparent background -->
+
+  <!-- Stylized A -->
+  <path filter="url(#softGlow)"
+        fill="url(#aGrad)"
+        d="
+        M256 58
+        L420 452
+        L348 452
+        C335 452 327 445 321 430
+        L247 250
+        C242 238 233 238 227 250
+        L153 430
+        C147 445 139 452 126 452
+        L54 452
+        Z"/>
+
+  <!-- inner counter -->
+  <path fill="white" fill-opacity="0"
+        d="M256 150 L310 280 L202 280 Z"/>
+
+  <!-- carve opening -->
+  <path fill="#000000"
+        d="M256 154
+           L307 278
+           L205 278 Z"
+        opacity="1"/>
+
+  <!-- Elegant ribbon -->
+  <path filter="url(#softGlow)"
+        fill="url(#ribbonGrad)"
+        d="
+        M72 360
+        C138 298 205 266 304 264
+        C367 263 421 273 456 285
+        C414 287 377 302 341 325
+        C293 356 252 391 200 413
+        C162 429 128 431 101 422
+        C78 414 69 398 72 383
+        C74 374 77 367 72 360 Z"/>
+
+  <!-- Sparkle -->
+  <path fill="#E9D5FF"
+    d="M402 114
+       L409 139
+       L434 146
+       L409 153
+       L402 178
+       L395 153
+       L370 146
+       L395 139Z"/>
+</svg>

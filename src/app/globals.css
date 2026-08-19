@@ -11,11 +11,29 @@
     --text-secondary: #a1a1aa;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     background-color: #09090b !important;
     color: #f4f4f5 !important;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+  }
+
+  a,
+  button {
+    transition: all 0.2s ease;
+  }
+
+  a:focus-visible,
+  button:focus-visible,
+  [role="button"]:focus-visible {
+    outline: 2px solid rgba(34, 211, 238, 0.9);
+    outline-offset: 3px;
+    border-radius: 9999px;
   }
 }
 
@@ -40,4 +58,10 @@
   background: rgba(22, 22, 30, 0.8) !important;
   border-color: rgba(6, 182, 212, 0.3) !important;
   box-shadow: 0 0 30px -10px rgba(6, 182, 212, 0.2);
+}
+
+@media (max-width: 640px) {
+  html {
+    scroll-padding-top: 100px;
+  }
 }
