@@ -149,12 +149,12 @@ export const Hero = () => {
           </motion.div>
         </div>
 
-        {/* Imagen de perfil (preparada para /images/ariana-profile.webp) */}
+        {/* Imagen de perfil (cargada desde /images/ariana-profile.jpeg) */}
         <div className="shrink-0">
           <picture>
-            <source srcSet="/images/ariana-profile.webp" type="image/webp" />
+            <source srcSet="/images/ariana-profile.jpeg" type="image/jpeg" />
             <Image
-              src="/images/ariana-profile.webp"
+              src="/images/ariana-profile.jpeg"
               alt="Ariana Ileen del Carpio Flores"
               width={160}
               height={160}
