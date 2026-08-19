@@ -169,9 +169,13 @@ export const Hero = () => {
         {/* Imagen de perfil (optimizada: /images/ariana-profile.webp) */}
         <div className="shrink-0">
           <picture>
-            <source srcSet="/images/ariana-profile.webp" type="image/webp" />
+            <source
+              type="image/webp"
+              srcSet="/images/ariana-profile-160.webp 160w, /images/ariana-profile-320.webp 320w, /images/ariana-profile-640.webp 640w, /images/ariana-profile-800.webp 800w"
+              sizes="(max-width: 480px) 96px, (max-width: 768px) 128px, (max-width: 1024px) 160px, 160px"
+            />
             <Image
-              src="/images/ariana-profile.webp"
+              src="/images/ariana-profile-800.webp"
               alt="Ariana Ileen del Carpio Flores"
               width={160}
               height={160}
