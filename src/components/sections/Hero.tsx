@@ -51,7 +51,7 @@ export const Hero = () => {
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
           <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
         </span>
-        Junior Software Engineer — Estudiante de Ingeniería de Sistemas (Último ciclo)
+              Estudiante de Ingeniería de Sistemas — Último ciclo (UPC)
       </motion.div>
 
       {/* Nombre, rol y foto */}
@@ -76,7 +76,7 @@ export const Hero = () => {
             <span className="bg-gradient-to-r from-cyan-300 via-sky-200 to-white bg-clip-text text-transparent">
               Software Engineer
             </span>
-            <span className="text-zinc-200"> {"| iOS · Power Platform · AI"}</span>
+            <span className="text-zinc-200"> {"| Data · Automation · iOS · AI"}</span>
           </motion.h2>
 
           <motion.p
@@ -92,7 +92,7 @@ export const Hero = () => {
 
           {/* Currently compact */}
           <div className="mt-4">
-           <span className="text-xs font-mono uppercase tracking-[0.24em] text-cyan-400 font-semibold">ActualmentE</span>
+           <span className="text-xs font-mono uppercase tracking-[0.24em] text-cyan-400 font-semibold">ACTUALMENTE</span>
            <motion.div
              initial={{ opacity: 0, y: 12 }}
              animate={{ opacity: 1, y: 0 }}

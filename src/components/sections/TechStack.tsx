@@ -3,16 +3,16 @@ import React from "react";
 
 const stack = [
   {
-    group: "Software Development",
-    items: ["Swift", "SwiftUI", "React", "Next.js", "TypeScript", "HTML", "CSS"],
+    group: "Data & AI",
+    items: ["Python", "Pandas", "NumPy", "Scikit-learn", "XGBoost", "SQL"],
   },
   {
     group: "Microsoft & Automation",
     items: ["Power Apps", "Power Automate", "Power BI", "SharePoint", "Microsoft Lists", "Copilot Studio"],
   },
   {
-    group: "Data & AI",
-    items: ["Python", "Pandas", "NumPy", "Scikit-learn", "XGBoost", "SQL"],
+    group: "Software Development",
+    items: ["Swift", "SwiftUI", "React", "Next.js", "TypeScript", "HTML", "CSS"],
   },
   {
     group: "Tools",

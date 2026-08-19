@@ -5,17 +5,19 @@ import { motion } from "framer-motion";
 const experience = [
   {
     company: "NTT DATA",
-    role: "Trainee / iOS Developer (Práctica preprofesional)",
-    technologies: ["Swift", "SwiftUI", "Git", "Xcode"],
+    role: "Trainee — iOS Development",
+    dates: "Mar 2026 — Oct 2026",
+    technologies: ["Swift", "SwiftUI", "MVVM", "REST APIs", "async/await", "URLSession", "Git", "Xcode"],
     description:
-      "Desarrollo y mantenimiento de soluciones iOS con enfoque en experiencia de usuario, integración con flujos de trabajo y entrega de funcionalidad con calidad técnica y documentación clara.",
+      "Prácticas preprofesionales orientadas al desarrollo iOS, implementación de funcionalidades en Swift/SwiftUI, integración con APIs y colaboración en el ciclo de entrega con control de versiones y pruebas.",
   },
   {
     company: "AENZA",
-    role: "Practicante TI (Práctica preprofesional)",
+    role: "Practicante TI",
+    dates: "May 2025 — Feb 2026",
     technologies: ["Power Apps", "Power Automate", "Power BI", "SharePoint", "Microsoft Lists"],
     description:
-      "Participación en automatización de procesos, soporte operativo y desarrollo de soluciones empresariales dentro del ecosistema Microsoft, con atención en mejora de flujos, organización de información y reportes de gestión.",
+      "Participación en automatización de procesos y desarrollo de soluciones en el ecosistema Microsoft. Trabajé en dashboards, consolidación de datos y mejoras de proceso que ayudaron a reducir tiempos de gestión aproximadamente 30%.",
   },
 ];
 
@@ -41,8 +43,9 @@ export const Experience = () => {
               <div>
                 <h3 className="text-2xl md:text-3xl font-bold text-white">{item.company}</h3>
                 <p className="text-base md:text-lg text-zinc-300 mt-1">{item.role}</p>
-              </div>
-            </div>
+                            {item.dates && <div className="text-sm text-zinc-400 mt-1">{item.dates}</div>}
+                          </div>
+                        </div>
 
             <div className="mb-4 flex flex-wrap gap-2">
               {item.technologies.map((tech) => (

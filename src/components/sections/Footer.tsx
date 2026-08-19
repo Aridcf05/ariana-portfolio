@@ -34,7 +34,7 @@ export const Footer = () => {
     <footer id="contact" className="py-20 md:py-24 border-t border-white/10 relative z-10">
       <div className="max-w-4xl mx-auto px-4 text-center">
         <h2 className="text-3xl md:text-5xl font-bold text-white tracking-tight mb-4">
-          ¿Buscas una desarrolladora Junior para tu equipo?
+                  ¿Buscas una desarrolladora para tu equipo?
         </h2>
         <p className="text-zinc-400 text-sm md:text-base max-w-xl mx-auto mb-8">
           Estoy en etapa final de carrera, con experiencia práctica en iOS, Power Platform, automatización y soluciones de datos.
